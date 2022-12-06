@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: cornflowerblue;
+        }
+        .box{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .box-circle svg{
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+        circle{
+            width: 150px;
+            height: 150px;
+            fill:none;
+            stroke: black;
+            stroke-width: 10px;
+            transform: translate(5px, 5px);
+            stroke-dasharray: 440;
+            stroke-dashoffset: 440 ;
+        }
+        circle:nth-child(1){
+            stroke-dashoffset:0 ;
+            stroke: rgb(102, 102, 102);
+        }
+        circle:nth-child(2){
+            stroke-dashoffset: calc(440 - 220);
+            stroke: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Circulo de progresso</h1>
+    <input type="number" placeholder="Digite um numero">
+    <button>Enviar</button>
+
+    <div class="box">
+        <div class="box-circle">
+            <svg>
+                <circle cx="70" cy="70" r="50"></circle>
+                <circle cx="70" cy="70" r="50"></circle>
+            </svg>
+            <div class="number">
+                <h2>70%</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
